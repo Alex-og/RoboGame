@@ -26,53 +26,48 @@ public class Robot {
 
     public void turnLeft() {
         // rotate 90 degrees counterclockwise
+
         System.out.println("Counterclockwise");
-        if (direction == Direction.DOWN){
-            this.direction = Direction.RIGHT;
-            return;
+        switch (getDirection()) {
+            case UP:
+                direction = Direction.LEFT;
+                break;
+            case RIGHT:
+                direction = Direction.UP;
+                break;
+            case DOWN:
+                direction = Direction.LEFT;
+                break;
+            case LEFT:
+                direction = Direction.UP;
+                break;
+            default:
         }
 
-        if (direction == Direction.UP){
-            this.direction = Direction.LEFT;
-            return;
-        }
-
-        if (direction == Direction.LEFT){
-            this.direction = Direction.DOWN;
-            return;
-        }
-
-        if (direction == Direction.RIGHT){
-            this.direction = Direction.UP;
-            return;
-        }
     }
 
     public void turnRight() {
         // rotate 90 degrees clockwise
+
         System.out.println("clockwise rotation");
-        if (this.direction == Direction.DOWN){
-            System.out.println("Down -> left");
-            this.direction = Direction.LEFT;
-            return;
-        }
-
-        if (this.direction == Direction.UP){
-            System.out.println("Up -> right");
-            this.direction = Direction.RIGHT;
-            return;
-        }
-
-        if (this.direction == Direction.LEFT){
-            System.out.println("Left -> up");
-            this.direction = Direction.UP;
-            return;
-        }
-
-        if (this.direction == Direction.RIGHT){
-            System.out.println("Right -> down");
-            this.direction = Direction.DOWN;
-            return;
+        switch (getDirection()) {
+            case UP:
+                direction = Direction.RIGHT;
+                System.out.println("Up -> right");
+                break;
+            case RIGHT:
+                direction = Direction.DOWN;
+                System.out.println("Right -> down");
+                break;
+            case LEFT:
+                direction = Direction.UP;
+                System.out.println("Left -> up");
+                break;
+            case DOWN:
+                direction = Direction.LEFT;
+                System.out.println("Down -> left");
+                break;
+            default:
         }
     }
 

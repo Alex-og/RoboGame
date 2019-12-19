@@ -1,17 +1,16 @@
 public class Game {
 
-    public static void main(String[] args) throws Exception {
-        moveRobot(new Robot(3,2, Direction.UP), 4, 2);
+    public static void main(String[] args) {
+        moveRobot(new Robot(3, 2, Direction.UP), 4, 2); //This method I can use in other blocks where created personage with moving skills
     }
 
-    
 
     public static void moveRobot(Robot robot, int toX, int toY) {
-        if(robot.getY() < toY){
+        if (robot.getY() < toY) {
             while (robot.getDirection() != Direction.UP) robot.turnRight(); // turn to need side
             while (robot.getY() < toY) robot.stepForward(); // do one step until will reach toY
         }
-        if(robot.getY() > toY){
+        if (robot.getY() > toY) {
             while (robot.getDirection() != Direction.DOWN) robot.turnRight(); // turn to need side
             while (robot.getY() > toY) robot.stepForward(); // do one step until will reach toY
         }
