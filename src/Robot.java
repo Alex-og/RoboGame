@@ -10,23 +10,23 @@ public class Robot {
     }
 
     public Direction getDirection() {
-        // текущее направление взгляда
+        // direction of current sight
         return direction;
     }
 
     public int getX() {
-        // текущая координата X
+        // current x coordinate
         return x;
     }
 
     public int getY() {
-        // текущая координата Y
+        // current y coordinate
         return y;
     }
 
     public void turnLeft() {
-        // повернуться на 90 градусов против часовой стрелки
-        System.out.println("Поворот против часовой стрелки");
+        // rotate 90 degrees counterclockwise
+        System.out.println("Counterclockwise");
         if (direction == Direction.DOWN){
             this.direction = Direction.RIGHT;
             return;
@@ -49,54 +49,54 @@ public class Robot {
     }
 
     public void turnRight() {
-        // повернуться на 90 градусов по часовой стрелке
-        System.out.println("поворот по часовой стрелке");
+        // rotate 90 degrees clockwise
+        System.out.println("clockwise rotation");
         if (this.direction == Direction.DOWN){
-            System.out.println("Вниз -> влево");
+            System.out.println("Down -> left");
             this.direction = Direction.LEFT;
             return;
         }
 
         if (this.direction == Direction.UP){
-            System.out.println("Вверх -> вправо");
+            System.out.println("Up -> right");
             this.direction = Direction.RIGHT;
             return;
         }
 
         if (this.direction == Direction.LEFT){
-            System.out.println("Влево -> вверх");
+            System.out.println("Left -> up");
             this.direction = Direction.UP;
             return;
         }
 
         if (this.direction == Direction.RIGHT){
-            System.out.println("Вправо -> вниз");
+            System.out.println("Right -> down");
             this.direction = Direction.DOWN;
             return;
         }
     }
 
     public void stepForward() {
-        // шаг в направлении взгляда
-        // за один шаг робот изменяет одну свою координату на единицу
-        System.out.println("движение");
+        // step towards the sight
+        // in one step the robot changes one coordinate by one unit
+        System.out.println("move");
         if (direction == Direction.DOWN){
-            System.out.println("вниз");
+            System.out.println("down");
             this.y--;
         }
 
         if (direction == Direction.UP){
-            System.out.println("вверх");
+            System.out.println("up");
             this.y++;
         }
 
         if (direction == Direction.LEFT){
-            System.out.println("налево");
+            System.out.println("left");
             this.x--;
         }
 
         if (direction == Direction.RIGHT){
-            System.out.println("направо");
+            System.out.println("right");
             this.x++;
         }
     }
